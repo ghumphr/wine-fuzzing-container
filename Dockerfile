@@ -19,7 +19,8 @@ RUN mkdir /winpython; cd /winpython && wget https://www.python.org/ftp/python/3.
 
 # Install Frida on Windows
 RUN cd /winpython && PTH=`ls *_pth` && cp $PTH $PTH.bak && sed 's/#import/import/' < $PTH.bak > $PTH && wget 'https://bootstrap.pypa.io/get-pip.py' && wine python get-pip.py && wine Scripts/pip.exe install setuptools && wine Scripts/pip.exe install frida-tools
-RUN cd /winpython/Scripts && wget "https://github.com/frida/frida/releases/download/16.4.5/frida-server-16.4.5-windows-x86.exe.xz" && xz -d frida-server-16.4.5-windows-x86.exe.xz && mv frida-server-16.4.5-windows-x86.exe frida-server-x86.exe && wget "https://github.com/frida/frida/releases/download/16.4.5/frida-server-16.4.5-windows-x86_64.exe.xz" && xz -d frida-server-16.4.5-windows-x86_64.exe.xz && mv frida-server-16.4.5-windows-x86_64.exe frida-server-x86_64.exe
+RUN cd /winpython/Scripts && wget "https://github.com/frida/frida/releases/download/16.5.9/frida-server-16.5.9-windows-x86.exe.xz" && xz -d frida-server-16.5.9-windows-x86.exe.xz && mv frida-server-16.5.9-windows-x86.exe frida-server-x86.exe && wget "https://github.com/frida/frida/releases/download/16.5.9/frida-server-16.5.9-windows-x86_64.exe.xz" && xz -d frida-server-16.5.9-windows-x86_64.exe.xz && mv frida-server-16.5.9-windows-x86_64.exe frida-server-x86_64.exe
+RUN cd /winpython/Scripts && wget "https://github.com/frida/frida/releases/download/16.5.9/frida-gadget-16.5.9-windows-x86.dll.xz" && xz -d frida-gadget-16.5.9-windows-x86.dll.xz && mv frida-gadget-16.5.9-windows-x86.dll frida-gadget-x86.dll && wget "https://github.com/frida/frida/releases/download/16.5.9/frida-gadget-16.5.9-windows-x86_64.dll.xz" && xz -d frida-gadget-16.5.9-windows-x86_64.dll.xz && mv frida-gadget-16.5.9-windows-x86_64.dll frida-gadget-x86_64.dll
 
 # Install Screen
 RUN apt install -y screen
