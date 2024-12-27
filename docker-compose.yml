@@ -1,0 +1,12 @@
+services:
+  linux:
+    build: . 
+    ports:
+      - 8888:8888
+      - 5902:5901
+    command:
+       /root/startup.sh
+    volumes:
+      - ./payload:/root/payload
+      - ./startup.sh:/root/startup.sh
+      
