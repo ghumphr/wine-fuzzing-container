@@ -36,8 +36,8 @@ RUN cd /root && git clone 'https://github.com/AFLplusplus/Fuzz-With-Wine-Demo.gi
 
 # Install Fpicker
 RUN cd /root && git clone 'https://github.com/ttdennis/fpicker.git' && cd fpicker && \
-	wget 'https://github.com/frida/frida/releases/download/16.4.7/frida-core-devkit-16.4.7-linux-x86_64.tar.xz' && \
-	xz -d < frida-core-devkit-16.4.7-linux-x86_64.tar.xz | tar xvf - && \
+	wget 'https://github.com/frida/frida/releases/download/16.5.9/frida-core-devkit-16.5.9-linux-x86_64.tar.xz' && \
+	xz -d < frida-core-devkit-16.5.9-linux-x86_64.tar.xz | tar xvf - && \
 	cp libfrida-core.a libfrida-core-linux.a && \
 	cp frida-core.h frida-core-linux.h && \
 	make fpicker-linux 
